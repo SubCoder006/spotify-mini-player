@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="head">
+            <div>
+                <img src="assets/icon.svg" alt="Icon" class="invert logo-1">
+            </div>
+
+            <div class="mid-content">
+                <button class="home-btn">
+                    <img src="assets/home.svg" alt="" class="invert logo-1">
+                </button>
+
+                <form class="search-form">
+                    <button type="submit" class="icon-button">
+                        <img src="assets/search.svg" alt="" class="invert logo-1">
+                    </button>
+
+                    <input type="text" class="search-input" placeholder="What do you want to play?" name="query" />
+                    <span><img src="assets/line.svg" alt="" class="invert logo-2">
+                    </span>
+                    <button type="button" class="icon-button">
+                        <img src="assets/browse.svg" alt="" class="invert logo-1">
+                    </button>
+                </form>
+            </div>
+            <div class="right">
+                <div class="right-1">
+                    <button>Premium</button>
+                    <button>Support</button>
+                    <button>Download</button>
+                </div>
+                <img src="assets/line.svg" alt="" class="invert logo-3">
+                <div class="right-2">
+                    <button>Install App</button>
+                    <button>SignUp</button>
+                    <button>Log in</button>
+                </div>
+            </div>
+            <!-- Hamburger icon -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <button><img src="assets/menubar.svg" alt=""></button>
+            </div>
+
+            <!-- Mobile floating menu -->
+            <div class="menu-bar" id="menubar">
+                <button>Premium</button>
+                <button>Support</button>
+                <button>Download</button>
+                <button>Install App</button>
+                <button>SignUp</button>
+                <button>Log in</button>
+            </div>
+
+        </div>
+
+        <div class="body">
+            <div class="lefty">
+                <div class="heading-1">
+                    <h1>Your Library</h1>
+                    <button><img src="assets/plus.svg" alt="" class="invert"></button>
+                </div>
+
+                <div class="left-cont" id="left-cont">
+                    <div class="box-1" id="box-1">
+                        <p>Create your first playlist</p>
+                        <p>It's easy, we'll help you</p>
+                        <button>Create playlist</button>
+                    </div>
+                    <div class="box-1" id="box-1">
+                        <p>Let's find some podcasts to follow</p>
+                        <p>We'll keep you updated on ne episodes</p>
+                        <button>Browse podcasts</button>
+                    </div>
+                </div>
+
+                <!-- Hidden song list (initially hidden) -->
+                <div class="playlistSongs" id="playlist-happy">
+                    <h3>Happy Hits Playlist</h3>
+                    <ul>
+                        <li>
+                            <img src="assets/music.svg" alt="">
+                            <div class="info">
+                                <div>Walking on Sunshine</div>
+                                <div>Katrina & The Waves</div>
+                            </div>
+                            <img src="assets/play.svg" alt=""
+                                onclick='playSong("songs/Walking On Sunshine.mp3","Walking on Sunshine", "Katrina & The Waves")'>
+                        </li>
+                        <li>
+                            <img src="assets/music.svg" alt="">
+                            <div class="info">
+                                <div>Happy</div>
+                                <div>Pharrell Williams</div>
+                            </div>
+                            <img src="assets/play.svg" alt=""
+                                onclick='playSong("songs/Happy.mp3","Happy", "Pharrell Williams")'>
+                        </li>
+                        <li>
+                            <img src="assets/music.svg" alt="">
+                            <div class="info">
+                                <div>Don't Worry, Be Happy</div>
+                                <div>Bobby McFerrin</div>
+                            </div>
+                            <img src="assets/play.svg" alt=""
+                                onclick='playSong("songs/Dont_Worry_Be_Happy.mp3","Dont Worry, Be Happy", "Bobby McFerrin")'>
+                        </li>
+                        <li>
+                            <img src="assets/music.svg" alt="">
+                            <div class="info">
+                                <div>Levitating</div>
+                                <div>Dua Lipa</div>
+                            </div>
+                            <img src="assets/play.svg" alt=""
+                                onclick='playSong("songs/Levitating.mp3","Levitating", "Dua Lipa")'>
+                        </li>
+                        <li>
+                            <img src="assets/music.svg" alt="">
+                            <div class="info">
+                                <div>Uptown Funk</div>
+                                <div>Mark Ronson ft. Bruno Mars</div>
+                            </div>
+                            <img src="assets/play.svg" alt=""
+                                onclick='playSong("songs/Uptown Funk.mp3","Uptown Funk", "Mark Ronson ft. Bruno Mars")'>
+                        </li>
+
+                    </ul>
+                    <button onclick="goBack()"><img src="assets/back.svg" alt=""></button>
+                </div>
+
+                <div class="playlistSongs" id="playlist-sleep" style="display: none;">
+                    <h3>Sleep Vibes Playlist</h3>
+                    <ul>
+                        <li>
+                            <img src="assets/music.svg" alt="">
+                            <div class="info">
+                                <div>Tum Hi Ho</div>
+                                <div>Arijit Singh</div>
+                            </div>
+                            <img src="assets/play.svg" alt=""
+                                onclick='playSong("songs/Tum Hi Ho.mp3","Tum Hi Ho", "Arijit Singh")'>
+                        </li>
+                        <li>
+                            <img src="assets/music.svg" alt="">
+                            <div class="info">
+                                <div>Re Mann</div>
+                                <div>Shreya Ghoshal, Swanand Kirkire</div>
+                            </div>
+                            <img src="assets/play.svg" alt=""
+                                onclick='playSong("songs/Re Mann.mp3","Re Mann", "Shreya Ghoshal, Swanand Kirkire")'>
+                        </li>
+                        <li>
+                            <img src="assets/music.svg" alt="">
+                            <div class="info">
+                                <div>Khairiyat</div>
+                                <div>Arijit Singh</div>
+                            </div>
+                            <img src="assets/play.svg" alt=""
+                                onclick='playSong("songs/Khairiyat.mp3","Khairiyat", "Arijit Singh")'>
+                        </li>
+                        <li>
+                            <img src="assets/music.svg" alt="">
+                            <div class="info">
+                                <div>Main Rahoon Ya Na Rahoon</div>
+                                <div>Armaan Malik</div>
+                            </div>
+                            <img src="assets/play.svg" alt=""
+                                onclick='playSong("songs/MRYNR.mp3","Main Rahoon Ya Na Rahoon", "Armaan Malik")'>
+                        </li>
+                        <li>
+                            <img src="assets/music.svg" alt="">
+                            <div class="info">
+                                <div>Hawayein</div>
+                                <div>Arijit Singh</div>
+                            </div>
+                            <img src="assets/play.svg" alt=""
+                                onclick='playSong("songs/Hawayein.mp3","Hawayein", "Arijit Singh")'>
+                        </li>
+                    </ul>
+                    <button onclick="goBack()"><img src="assets/back.svg" alt=""></button>
+                </div>
+
+                <div class="foot-1">
+                    <a href="#">Legal</a>
+                    <a href="#">Safety&Privacy Center</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Cookies</a>
+                    <a href="#">About Ads</a>
+                    <a href="#">Accessibility</a>
+                </div>
+                <div class="foot-2"><a href="#">Cookies</a></div>
+                <button class="black-btn"><img src="browse.png" alt=""> English</button>
+            </div>
+
+            <div class="righty">
+                <div class="mid-1">
+                    <h1>Trending Songs</h1>
+                </div>
+                <div class="mid-2">
+                    <div class="img-wrapper">
+                        <img src="assets/sapphire.jpg" alt="">
+                        <button class="play-btn" onclick="playSong('songs/Sapphire.mp3', 'Sapphire', 'Ed Sheeran')">
+                            <img src="assets/play.svg" alt="">
+                        </button>
+                        <p>Sapphire</p>
+                        <p>Ed Sheeran</p>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="assets/maan-yeh-mera-metro.jpg" alt="">
+                        <button class="play-btn"
+                            onclick="playSong('songs/Mann Ye Mera.mp3', 'Mann Ye Mera (From Metro...In Dino ) ', 'Pritam, Vishal Mishra, Neelesh Misha')">
+                            <img src="assets/play.svg" alt="">
+                        </button>
+                        <p>Mann Ye Mera(From "Metro...In Dino")</p>
+                        <p>Pritam, Vishal Mishra, Neelesh Misha</p>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="assets/chirapunji.webp" alt="">
+                        <button class="play-btn"
+                            onclick="playSong('songs/Chirapunji.mp3', 'Chirapunji', 'Nihal Sadiq, Hanan Shaah')">
+                            <img src="assets/play.svg" alt="">
+                        </button>
+                        <p>Chirapunji</p>
+                        <p>Nihal Sadiq, Hanan Shaah</p>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="assets/jugrafiyaa.jpg" alt="">
+                        <button class="play-btn"
+                            onclick="playSong('songs/Jugraafiya.mp3', 'Jugraafiya-From Super 30', 'Uit Narayan, Shreya Ghoshal')">
+                            <img src="assets/play.svg" alt="">
+                        </button>
+                        <p>Jugraafiya-From "Super 30"</p>
+                        <p>Uit Narayan, Shreya Ghoshal</p>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="assets/shaky.jpg" alt="">
+                        <button class="play-btn"
+                            onclick="playSong('songs/Shaky.mp3', 'Shaky', 'Sanju Rathod, G-SPXRK')">
+                            <img src="assets/play.svg" alt="">
+                        </button>
+                        <p>Shaky</p>
+                        <p>Sanju Rathod, G-SPXRK</p>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="assets/Ishq-mera.jpg" alt="">
+                        <button class="play-btn"
+                            onclick="playSong('songs/Ishq Mera.mp3', 'Ishq Mera', 'Jubin Nautiyal, Akashdeep Sengupta,...')">
+                            <img src="assets/play.svg" alt="">
+                        </button>
+                        <p>Ishq Mera (Feat. Esha Gupta)</p>
+                        <p>Jubin Nautiyal, Akashdeep Sengupta,...</p>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="assets/Raatein-guzari.jpg" alt="">
+                        <button class="play-btn"
+                            onclick="playSong('songs/Raatein Guzaari.mp3', 'Raatein Guzaari', 'Aditya Rikhari')">
+                            <img src="assets/play.svg" alt="">
+                        </button>
+                        <p>Raatein Guzaari</p>
+                        <p>Aditya Rikhari</p>
+                    </div>
+                </div>
+
+                <div class="mid-1">
+                    <h1>Popular artists</h1>
+                </div>
+                <div class="mid-3">
+                    <div class="img-wrapper">
+                        <img src="assets/pritam.jpg" alt="">
+                        <button class="play-btn">
+                            <img src="assets/play.svg" alt="">
+                        </button>
+                        <p>Pritam</p>
+                        <p>Artist</p>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="assets/sachin-jigar.jpg" alt="">
+                        <button class="play-btn">
+                            <img src="assets/play.svg" alt="">
+                        </button>
+                        <p>Sachin-Jigar</p>
+                        <p>Artist</p>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="assets/arijit-singh.jpg" alt="">
+                        <button class="play-btn">
+                            <img src="assets/play.svg" alt="">
+                        </button>
+                        <p>Arijit Singh</p>
+                        <p>Artist</p>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="assets/ar-rahman.jpg" alt="">
+                        <button class="play-btn">
+                            <img src="assets/play.svg" alt="">
+                        </button>
+                        <p>A.R. Rahmaan</p>
+                        <p>Artist</p>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="assets/armaan-malik.jpg" alt="">
+                        <button class="play-btn">
+                            <img src="assets/play.svg" alt="">
+                        </button>
+                        <p>Armaan Malik</p>
+                        <p>Artist</p>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="assets/atif-aslam.jpg" alt="">
+                        <button class="play-btn">
+                            <img src="assets/play.svg" alt="">
+                        </button>
+                        <p>Atif Aslam</p>
+                        <p>Artist</p>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="assets/yoyo-singh.jpg" alt="">
+                        <button class="play-btn">
+                            <img src="assets/play.svg" alt="">
+                        </button>
+                        <p>Yoyo Honey Singh</p>
+                        <p>Artist</p>
+                    </div>
+                </div>
+                <div class="mid-1">
+                    <h1>Spotify Playlists</h1>
+                </div>
+                <div class="mid-2">
+                    <div class="img-wrapper">
+                        <img src="assets/Happy-hits.jpg" alt="">
+                        <button class="play-btn" onclick="playPlaylist('happy')">
+                            <img src="assets/play.svg" alt="">
+                        </button>
+                        <p>Happy Hits</p>
+                        <p>Hits to boost your mood and lit your spirit</p>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="assets/Sleep-vibes.jpg" alt="">
+                        <button class="play-btn"  onclick="playPlaylist('sleep')">
+                            <img src="assets/play.svg" alt="">
+                        </button>
+                        <p>Sleep Vibes</p>
+                        <p>Dream deep, wrapped in melodies</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <div>
+            <p>Preview of Spotify</p>
+            <p>Sign up to get unlimited songs and podcasts with occasional ads. No credit card needed.</p>
+        </div>
+        <a href="#" class="white-btn">Sign up free</a>
+    </div>
+
+
+    <div class="player-bar" id="playerBar" style="display: none;">
+        <!-- Left: Song Info -->
+        <div class="player-info">
+            <p id="songTitle">Tum Hi Ho</p>
+            <p id="songArtist">Mithoon, Arijit Singh</p>
+        </div>
+
+        <!-- Center: Controls -->
+        <div class="controls">
+            <button id="prevBtn"><img src="assets/prev.svg" alt="Previous" width="24" height="24"></button>
+
+            <button id="playPauseBtn" class="circle-btn">
+                <img id="playPauseIcon" src="assets/PlayM.svg" alt="Play" width="16" height="16" class="invert">
+            </button>
+
+            <button id="nextBtn"><img src="assets/next.svg" alt="Next" width="24" height="24"></button>
+        </div>
+
+        <!-- Right: Volume -->
+        <div class="volume-section">
+            <button id="muteBtn">
+                <img id="muteIcon" src="assets/volume.svg" alt="Volume" width="20" height="20" class="invert">
+            </button>
+            <input type="range" id="volumeBar" min="0" max="1" step="0.01" value="1">
+        </div>
+
+        <!-- Bottom: Progress Bar -->
+        <div class="progress-container">
+            <span id="currentTime">0:00</span>
+            <input type="range" id="progressBar" value="0" min="0" step="0.1">
+            <span id="totalTime">0:00</span>
+        </div>
+    </div>
+
+
+    <audio id="audioPlayer"></audio>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

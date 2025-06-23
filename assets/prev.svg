@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="white">
+  <!-- First triangle (right side) -->
+  <path d="M19 4v16l-9-8z"/>
+  <!-- Second triangle (left side) -->
+  <path d="M10 4v16L1 12z"/>
+</svg>
